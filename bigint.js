@@ -19,7 +19,7 @@ console.log(a === 10); // false
 
 console.log(10n + BigInt(5));  // 15n
 console.log(Number(10n) + 5); // 15
-console.log(10n > 5); // true  // 比较大小 无需转换类型
+console.log(10n > 5); // true  // 比较大小 无需转换类型  5会默认转换为 BigInt(5) 即5n
 console.log(10n ==10); // true 抽象相等
 
 // 注意事项 
