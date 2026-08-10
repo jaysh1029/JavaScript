@@ -267,14 +267,17 @@ bindFn.call(another); // bound  这里bindFn的this已经被永久绑定到obj2�
 
 // 只有函数才能调用 apply call bind  其他对象一律不行
 
-// 类构造函数 不能用 call/apply 
+// 类构造函数 不能用 call/apply  但可以使用bind ，只是应用场景极少
+// 若类使用bind，则this由new操作符自动创建，bind的第一个参数会被忽略  即this指向new的对象
 
 class User {
     constructor(name) {
         this.name = name;
     }
 }
-User.bind({}, 'test');
+//User.call({}, 'test');  //会报错
+
+
 
 
 
