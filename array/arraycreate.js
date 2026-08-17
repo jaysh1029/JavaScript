@@ -13,31 +13,31 @@ const arr3 = new Array(1, 3, 5, 6, 7); //  传入多个值，是元素本身 ★
 console.log(arr3);  // [ 1, 3, 5, 6, 7 ]
 
 console.log('使用Array.of() ES6');
-const arr4 = Array.of(5); // 创建一个数组，包含一个元素5
+const arr4 = Array.of(5); // 创建一个数组，包含一个元素5  //   ★★★
 console.log(arr4, arr4.length, arr4[0]); // [ 5 ] 1 5
 const arr5 = Array.of(2, 5, 7);
 console.log(arr5, arr5.length, arr5[0]); // [ 2, 5, 7 ] 3 2
 
 console.log('使用Array.from() 从类数组转换 ES6');
 
-const arr6 = Array.from('hello');
+const arr6 = Array.from('hello');  //   ★★★
 console.log(arr6, arr6.length, arr6[arr6.length - 1]); // [ 'h', 'e', 'l', 'l', 'o' ] 5 o
 
 console.log('从Set转换');
-const set = new Set([1, 3, 6, 7]);
+const set = new Set([1, 3, 6, 7]);  //   ★★★
 const arr7 = Array.from(set);
 console.log(arr7, arr7.length, arr7[arr7.length - 1]); // [ 1, 3, 6, 7 ] 4 7
 
 console.log('带映射函数：');
-const arr8 = Array.from([1, 2, 3], x => x * 2);
+const arr8 = Array.from([1, 2, 3], x => x * 2);  //   ★★★
 console.log(arr8, arr8.length, arr8[arr8.length - 1]);  // [ 2, 4, 6 ] 3 6
 
 console.log('创建指定范围的数组：');
-const range = Array.from({ length: 10 }, (_, i) => i + 1);
+const range = Array.from({ length: 10 }, (_, i) => i + 1);  //   ★★★
 console.log(range, range.length); // [1, 2, 3, 4,  5,  6, 7, 8, 9, 10] 10
 
 console.log('创建重复值数组:');
-const repeat = new Array(5).fill(10);
+const repeat = new Array(5).fill(10);   //   ★★★
 console.log(repeat); // [ 10, 10, 10, 10, 10 ]  创建一个包含5个元素的数组，并用10来填充每一个位置
 
 console.log('各种方式对比:');
