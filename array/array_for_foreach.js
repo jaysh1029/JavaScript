@@ -19,7 +19,7 @@ try {
     nums1.forEach(value => {
         if (value == 3) {
             // 不能使用break，会报错  SyntaxError: Illegal break statement
-            // break; 
+            //break;
         }
         console.log(value);
     })
