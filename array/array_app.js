@@ -1,6 +1,6 @@
 // 实际应用场景
 
-// 求和函数 支持任意参数
+// 求和函数 支持任意参数  ★★★
 function sumAll() {
     // 方法1：直接遍历 arguments
     let total1 = 0;
@@ -99,7 +99,7 @@ const totalScore = dataArray2.reduce((acc, curr) => acc + curr.score, 0);
 const averageScore = totalScore / dataArray2.length;
 console.log('平均分: ', averageScore); // 平均分:  87.6
 
-// 分组统计(按城市)
+// 分组统计(按城市)  ★★★
 const groupedByCity = dataArray2.reduce((acc, curr) => {
     if (!acc[curr.city]) {
         acc[curr.city] = [];
@@ -123,8 +123,7 @@ console.log('按城市分组: ', groupedByCity);
 }
 */
 
-// 计算各城市的平均分
-
+// 计算各城市的平均分  ★★★
 const cityAverages = Object.entries(groupedByCity).map(([city, students]) => {
     const avg = students.reduce((acc, curr) => acc + curr.score, 0) / students.length;
     return { city, averate: avg };
@@ -141,7 +140,7 @@ console.log('城市平均分: ', cityAverages);
 // 创建类数组工具   
 console.log('类数组工具函数');
 
-// 创建类数组对象
+// 创建类数组对象  ★★★
 function createArrayLikeFromArray(arr) {
     const like = {};
     arr.forEach((item, index) => {
@@ -156,7 +155,7 @@ const like5 = createArrayLikeFromArray(array1);
 // 从数组创建类数组:  { '0': 10, '1': 20, '2': 30, '3': 40, length: 4 } 4
 console.log('从数组创建类数组: ', like5, like5.length);
 
-// 安全的数据处理函数
+// 安全的数据处理函数 ★★★
 function safeProcessData(data) {
     // 确保数据是数组
     const safeArray = Array.isArray(data) ? data : Array.from(data);
@@ -178,7 +177,7 @@ class MyArrayLike {
     }
 
     // 实现迭代器
-    [Symbol.iterator]() {
+    [Symbol.iterator]() { //  ★★★
         let index = 0;
         const self = this;
         return {
@@ -235,7 +234,7 @@ for (let item of myLike) {
     */
 }
 // toArray [ 'a', 'b', 'c', 'd' ]
-console.log('toArray', myLike.toArray()); 
+console.log('toArray', myLike.toArray());
 
 
 
