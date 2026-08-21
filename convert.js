@@ -8,8 +8,8 @@ console.log('5' - 3); // 2     减法 按算术运算
 
 console.log(true + 1);  // 2
 console.log(5 == '5'); // true
-console.log(0 == false); // true
-console.log(null == undefined); // true
+console.log(0 == false, 0 === false); // true false
+console.log(null == undefined, null === undefined); // true false
 
 
 // 一元运算符转换

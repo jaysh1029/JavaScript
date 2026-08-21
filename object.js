@@ -72,9 +72,10 @@ const product = { name: 'iphone 15', price: 5999, brand: 'Apple' };
 for (const key in product) {
     console.log(` ${key}: ${product[key]}`);
 }
-console.log(Object.keys(product));
-console.log(Object.values(product));
-console.log(Object.entries(product));
+//  ★★★
+console.log(Object.keys(product)); // 键 [ 'name', 'price', 'brand' ]
+console.log(Object.values(product)); // 值 [ 'iphone 15', 5999, 'Apple' ]
+console.log(Object.entries(product)); // [键, 值] 对的数组 [ [ 'name', 'iphone 15' ], [ 'price', 5999 ], [ 'brand', 'Apple' ] ]
 
 const original = {
     name: '张三',

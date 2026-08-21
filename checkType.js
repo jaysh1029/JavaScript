@@ -1,14 +1,15 @@
 // 类型检查
 
 console.log('---- typeof ----');
-console.log(typeof 42);
-console.log(typeof 'Hello');
+console.log(typeof 42); // number
+console.log(typeof 'Hello'); // string
 console.log(typeof true, typeof undefined, typeof null, typeof Symbol(), typeof 123n, typeof {}, typeof [], typeof function () { });
+// boolean undefined object symbol bigint object object function
 console.log(typeof new Date()); // object
-console.log('--- instanceof ---');
+console.log('--- instanceof ---'); //  检测引用类型的具体构造函数  ★★★
 console.log([] instanceof Array); // true
 console.log({} instanceof Object); // true
-console.log(new Date() instanceof Date); // true
+console.log(new Date() instanceof Date);  // true  ★★★
 
 console.log('--- Array.isArray ---');
 console.log(Array.isArray([])); // true
@@ -16,8 +17,10 @@ console.log(Array.isArray({})); // false
 
 console.log('--- Object.prototype.toString.call ---');
 
+// 获取精确的 [object Type]   ★★★
 function getType(value) {
     let typeStr = Object.prototype.toString.call(value);
+     // Object.prototype.toString.call 一般结果都是 [object 类型]  如[object Number] [object Null] [object Date]   ★★★
     console.log(typeStr, typeStr.slice(8, -1)); // 截取第8位到 倒数第一位
     return typeStr;
 }

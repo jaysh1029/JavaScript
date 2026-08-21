@@ -31,6 +31,7 @@ console.log(parseInt(' 123 ')); // 123 自动去空格
 console.log(parseInt('abc123')); // NaN  第一个字符不是数字   ★★★
 console.log(parseInt('12.34')); // 12 取整
 console.log(parseFloat('12.34')); // 12.34
+console.log(parseInt(undefined)); // NaN  ★★★
 
 console.log("+++++++++++++++++ 一元 + 运算符 ++++++++++++++++++++");
 
