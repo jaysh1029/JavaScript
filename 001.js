@@ -1,7 +1,7 @@
 //"use strict" // 这条语句必须放在脚本或函数的顶部，前面只能有注释或空行，任何可执行语句，都会让它失效
-/* var varVariable;
+var varVariable;
 console.log(varVariable);
-var v2 ="声明并赋值";
+var v2 = "声明并赋值";
 console.log(v2);
 
 let let01;
@@ -10,14 +10,15 @@ console.log(let01);
 let let02 = "let 变量";
 console.log(let02);
 
-const c1="const变量";
+// console.log(c1); 这个会报错 在初始化之前不能提前访问
+const c1 = "const变量";
 console.log(c1);
 
-console.log(window.v2);
-console.log(window.let02);
-console.log(window.c1);
+// console.log(window.v2);
+// console.log(window.let02);
+// console.log(window.c1);
 
- */
+
 
 function testScope() {
     var funcScope = "函数内的var";
@@ -43,6 +44,8 @@ function testScope() {
 }
 
 testScope();
+
+// 下面两个变量在函数中声明 但没有修饰符 已经成了全局变量并挂在到window或globalThis对象上
 console.log('winVar：', winVar, globalThis.winVar);
 console.log('winVar2：', winVar2);
 
