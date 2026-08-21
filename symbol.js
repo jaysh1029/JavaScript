@@ -57,9 +57,12 @@ console.log(custom.toString()); // [object Custom]   若没有自定义toStringT
 
 // 私有属性
 const _priData = Symbol('private');
+
 class MyClass {
     constructor(val) {
-        this[_priData] = val;
+        this[_priData] = val; // 这个其实也是公有属性，知识访问的时候只能使用 cObj[_priData] 属性名不带单引号   ★★★
+        //this.data = val; // 或用下面的方式 给data加 '' 这样添加的是公有属性
+        this['data'] = val;
     }
     getPrivate() {
         return this[_priData];
@@ -67,7 +70,13 @@ class MyClass {
 }
 const mcObj = new MyClass('秘密');
 console.log(mcObj.getPrivate());  // 秘密
-console.log(mcObj._priData);  //undefined
+
+// mcObj._priData 等价于 mcObj['_priData'] 注意这个带单引号
+// mcObj[_priData] 不带单引号 就是属性名称  因此可以访问  ★★★
+console.log(mcObj._priData, mcObj[_priData], mcObj.data);  //undefined 秘密 秘密  ★★★
+
+// 不是真正的私有，通过 Object.getOwnPropertySymbols() 可以获取   ★★★
+console.log(Object.getOwnPropertySymbols(mcObj), mcObj[Object.getOwnPropertySymbols(mcObj)[0]]); // [ Symbol(private) ] 秘密
 
 // 定义常量
 const COLORS = {
