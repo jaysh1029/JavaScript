@@ -106,7 +106,9 @@ console.log(!'hello'); //false
 console.log(!0); //true
 console.log(!!'hello'); //true
 console.log('hello' || 'world'); // hello  返回第一个真值  ★★★
-console.log(0 || 'world'); // world  0位false  返回第一个真值  ★★★
+console.log(0 || 'world'); // world  0位false  返回第一个真值或返回第二个假值  ★★★
+console.log(0 || null); // null 都为false 返回最后一个 ★★★
+console.log(null || 0); // 0 都为false 返回最后一个 ★★★
 console.log('hello' && 'world'); // world  默认返回第一个假值，都为真，返回最后一个   ★★★
 console.log(0 && 'world'); // 0 返回第一个假值  (短路)    ★★★
 console.log('world' && 0); // 0 返回第一个假值  ★★★
