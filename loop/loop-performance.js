@@ -5,28 +5,28 @@ let sumFor2 = 0;
 for (let i = 0; i < largeArray.length; i++) {
     sumFor2 += largeArray[i];
 }
-console.timeEnd('for 循环'); // for 循环: 6.312ms
+console.timeEnd('for 循环'); // for 循环: 2.744ms
 
 console.time('for 循环 缓存length');
 let sumFor3 = 0;
 for (let i = 0, len = largeArray.length; i < len; i++) {
     sumFor3 += largeArray[i];
 }
-console.timeEnd('for 循环 缓存length'); // for 循环: 6.312ms
+console.timeEnd('for 循环 缓存length'); // for 循环 缓存length:1.85ms
 
 console.time('for...of');
 let sumForOf2 = 0;
 for (let item of largeArray) {
     sumForOf2 += item;
 }
-console.timeEnd('for...of'); // for...of: 11.714ms
+console.timeEnd('for...of'); // for...of: 7.699ms
 
 console.time('forEach');
 let sumForEach2 = 0;
 largeArray.forEach(item => {
     sumForEach2 += item;
 });
-console.timeEnd('forEach'); // forEach: 8.997ms
+console.timeEnd('forEach'); // forEach: 8.244ms
 
 console.time('while 循环');
 let sumWhile = 0;
@@ -35,7 +35,7 @@ while (i4 < largeArray.length) {
     sumWhile += largeArray[i4];
     i4++;
 }
-console.timeEnd('while 循环'); // while 循环: 2.508ms
+console.timeEnd('while 循环'); // while 循环: 2.605ms
 
 // 优化建议
 
