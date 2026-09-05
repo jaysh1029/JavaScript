@@ -277,6 +277,28 @@ class User {
 }
 //User.call({}, 'test');  //会报错
 
+Function.prototype.fullBind = function (context, ...args) {
+    const fn = this;
+    const boundFn = function (...newArgs) {
+        // 处理 new 调用的情况
+        const isNew = this instanceof boundFn;
+        const ctx = isNew ? this : context;
+        return fn.apply(ctx, [...args, ...newArgs]);
+    };
+
+    // 保持原型链
+    boundFn.prototype = Object.create(fn.prototype);
+    return boundFn;
+};
+
+function Person11(name) {
+    this.name = name;
+}
+
+const BoundPerson = Person11.fullBind(null, '默认名');
+const p7 = new BoundPerson();
+console.log('new 调用 p7:', p7); // 输出: Person11 { name: '默认名' }
+
 
 
 
